@@ -1899,6 +1899,7 @@ properties:
     available_on:
       class:
       - OerResource
+      - EtdResource
       - GenericWorkResource
       - ImageResource
       - CdlResource
