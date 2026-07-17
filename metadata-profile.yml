@@ -303,7 +303,7 @@ properties:
     - license_sim
     - license_tesim
     form:
-      primary: true
+      primary: false
       multiple: false
     mappings:
       simple_dc_pmh: dc:rights
@@ -814,11 +814,7 @@ properties:
   keyword:
     available_on:
       class:
-      - GenericWorkResource
-      - ImageResource
-      - CdlResource
-      - OerResource
-      - EtdResource
+        - 'null'
     cardinality:
       minimum: 1
     data_type: array
@@ -850,6 +846,11 @@ properties:
       class:
       - CollectionResource
       - Hyrax::FileSet
+      - GenericWorkResource
+      - ImageResource
+      - CdlResource
+      - OerResource
+      - EtdResource
     cardinality:
       minimum: 0
     data_type: array
