@@ -1,11 +1,11 @@
 ---
 m3_version: 1.0.beta2
 profile:
-  date_modified: '2026-06-12'
+  date_modified: '2026-07-17'
   responsibility: https://samvera.org
-  responsibility_statement: PALS Initial Profile
-  type: PALS Initial Profile
-  version: 1
+  responsibility_statement: PALS/Pitt Custom Profile
+  type: PALS/Pitt Custom Profile
+  version: 2
 classes:
   GenericWorkResource:
     display_label: Generic Work
@@ -641,6 +641,9 @@ properties:
       class:
       - OerResource
       - EtdResource
+      - GenericWorkResource
+      - ImageResource
+      - CdlResource
     cardinality:
       minimum: 1
     data_type: array
@@ -674,9 +677,6 @@ properties:
       class:
       - Hyrax::FileSet
       - CollectionResource
-      - GenericWorkResource
-      - ImageResource
-      - CdlResource
     cardinality:
       minimum: 0
     data_type: array
@@ -817,6 +817,7 @@ properties:
       - GenericWorkResource
       - ImageResource
       - CdlResource
+      - OerResource
       - EtdResource
     cardinality:
       minimum: 1
@@ -848,7 +849,6 @@ properties:
     available_on:
       class:
       - CollectionResource
-      - OerResource
       - Hyrax::FileSet
     cardinality:
       minimum: 0
@@ -1277,9 +1277,9 @@ properties:
     controlled_values:
       format: http://www.w3.org/2001/XMLSchema#string
       sources:
-      - discipline
+      - 'null'
     display_label:
-      default: Degree Discipline
+      default: Discipline
     index_documentation: searchable
     indexing:
     - degree_discipline_tesim
@@ -1730,15 +1730,18 @@ properties:
   discipline:
     available_on:
       class:
+      - GenericWorkResource
+      - ImageResource
+      - CdlResource
       - OerResource
     cardinality:
-      minimum: 1
+      minimum: 0
       maximum: 1
     data_type: array
     controlled_values:
       format: http://www.w3.org/2001/XMLSchema#string
       sources:
-      - discipline
+      - 'null'
     display_label:
       default: blacklight.search.fields.index.discipline_tesim
     index_documentation: searchable
@@ -1746,8 +1749,8 @@ properties:
     - discipline_tesim
     - discipline_sim
     form:
-      required: true
-      primary: true
+      required: false
+      primary: false
       multiple: false
     property_uri: https://hykucommons.org/terms/degree_discipline
     range: http://www.w3.org/2001/XMLSchema#string
@@ -1821,6 +1824,9 @@ properties:
     available_on:
       class:
       - OerResource
+      - GenericWorkResource
+      - ImageResource
+      - CdlResource
     cardinality:
       minimum: 0
     data_type: array
@@ -1867,6 +1873,9 @@ properties:
     available_on:
       class:
       - OerResource
+      - GenericWorkResource
+      - ImageResource
+      - CdlResource
     cardinality:
       minimum: 0
     data_type: array
@@ -1889,6 +1898,9 @@ properties:
     available_on:
       class:
       - OerResource
+      - GenericWorkResource
+      - ImageResource
+      - CdlResource
     cardinality:
       minimum: 0
     data_type: array
